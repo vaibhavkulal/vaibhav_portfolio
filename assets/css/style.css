@@ -406,17 +406,15 @@ a:hover {
 }
 
 .hero-portrait .pic {
-    position: absolute;
+  position: absolute;
     right: 0;
     top: 0;
-    width: 300px;
-    height: 300px;
-        background-image: url(/assets/images/portrait.webp);
-    background-size: cover;
-    background-position: center;
+    bottom: 0;
+    width: 45vw;
+    background-size: contain;
+    background-position: bottom;
     background-repeat: no-repeat;
-    border-radius: 50%;
-    overflow: hidden;
+    background-image: url(/assets/images/portrait.webp);
 }
 
 
@@ -445,15 +443,15 @@ a:hover {
         width: 300px;
         /* Or any fixed value */
         height: 300px;
-        /* Must be equal to width */        background-image: url(/assets/images/portrait.webp);
-        background-size: cover;
+        /* Must be equal to width */       
+        
+            background-size: cover;
         background-position: center;
         background-repeat: no-repeat;
+        background-image: url(/assets/images/portrait.webp);
         border-radius: 50%;
         overflow: hidden;
         /* Ensures contents stay inside the circle */
-        margin: 0 auto;
-        /* Center if needed */
     }
 
 
