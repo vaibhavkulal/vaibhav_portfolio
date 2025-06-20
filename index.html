@@ -5,62 +5,50 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <!-- Primary Meta Tags -->
     <title>VAIBHAV - Frontend Web Developer</title>
-<base href="/vaibhav_portfolio/">
 
+    <!-- Base path for GitHub Pages -->
+    <base href="/vaibhav_portfolio/">
+
+    <!-- Meta SEO -->
     <meta name="title" content="VAIBHAV - Frontend Web Developer">
-    <meta name="description"
-        content="VAIBHAV - Passionate Frontend Web Developer creating beautiful and responsive websites. Explore my portfolio and blog for tech insights.">
+    <meta name="description" content="VAIBHAV - Passionate Frontend Web Developer creating beautiful and responsive websites. Explore my portfolio and blog for tech insights.">
     <meta name="keywords" content="VAIBHAV, Web Developer, Frontend Developer, Portfolio, Blog, Tech Insights">
     <meta name="author" content="VAIBHAV">
-
 
     <!-- Favicon -->
     <link rel="icon" href="assets/images/vklogo.png" type="image/x-icon">
 
-    <!-- Google Fonts: Rubik -->
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Rubik&amp;display=swap">
+    <!-- Google Fonts -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Rubik&display=swap">
 
     <!-- Stylesheets -->
-    <link rel="stylesheet" href="assets/css/aos.css">
-    <link rel="stylesheet" href="assets/css/owl.carousel.min.css">
     <link rel="stylesheet" href="assets/css/bootstrap.min.css">
     <link rel="stylesheet" href="assets/css/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="assets/css/aos.css">
+    <link rel="stylesheet" href="assets/css/owl.carousel.min.css">
     <link rel="stylesheet" href="assets/css/style.css">
 
-    <!-- Preload Important resources -->
-    <link rel="preload" href="assets/css/aos.css" as="style">
-    <link rel="preload" href="assets/css/owl.carousel.min.css" as="style">
+    <!-- Preload critical styles -->
     <link rel="preload" href="assets/css/bootstrap.min.css" as="style">
     <link rel="preload" href="assets/css/bootstrap-icons.min.css" as="style">
+    <link rel="preload" href="assets/css/aos.css" as="style">
+    <link rel="preload" href="assets/css/owl.carousel.min.css" as="style">
     <link rel="preload" href="assets/css/style.css" as="style">
 
+    <!-- Typing Text Animation -->
     <style>
         @keyframes typing {
-            from {
-                width: 0
-            }
-
-            to {
-                width: 100%
-            }
+            from { width: 0 }
+            to { width: 100% }
         }
 
         @keyframes blink {
-
-            0%,
-            100% {
-                border-color: transparent
-            }
-
-            50% {
-                border-color: black
-            }
+            0%, 100% { border-color: transparent }
+            50% { border-color: black }
         }
 
-        #nameText,
-        #greetingText {
+        #nameText, #greetingText {
             display: inline-block;
             overflow: hidden;
             white-space: nowrap;
@@ -70,8 +58,7 @@
         }
     </style>
 
-
-    <!-- MS-Clarity Analytics -->
+    <!-- Microsoft Clarity Analytics -->
     <script type="text/javascript">
         (function (c, l, a, r, i, t, y) {
             c[a] = c[a] || function () { (c[a].q = c[a].q || []).push(arguments) };
@@ -80,7 +67,6 @@
         })(window, document, "clarity", "script", "phycesbqlg");
     </script>
 </head>
-
 <body data-bs-theme="dark" data-bs-spy="scroll" data-bs-target="#navbar">
 
     <!-- Preloader -->
@@ -936,49 +922,6 @@
 
             updateText();
             setInterval(updateText, 10000);
-        });
-    </script>
-
-    <script>
-        // ✅ Problem Submission Form (Google Apps Script)
-        document.getElementById('problemForm').addEventListener('submit', function (e) {
-            e.preventDefault();
-
-            const form = e.target;
-
-            const data = {
-                type: 'problem',
-                name: form.name.value,
-                email: form.email.value,
-                platform: form.platform.value,
-                title: form.title.value,
-                link: form.link.value,
-                message: form.message.value
-            };
-
-            console.log("📤 Submitting problem data:", data);
-
-            fetch('https://script.google.com/macros/s/AKfycbyvMd5cn0gg-FA2hrmTj6zVj1YKq1YNKxd3IMTVouYI7dJSHk6QslEbaXXGa8FT_Gbx/exec', {
-                method: 'POST',
-                body: JSON.stringify(data),
-                headers: {
-                    'Content-Type': 'application/json'
-                }
-            })
-                .then(res => res.json())
-                .then(res => {
-                    console.log("✅ Problem response:", res);
-                    if (res.status === 'success') {
-                        form.reset();
-                        document.getElementById('submissionSuccess').style.display = 'block';
-                    } else {
-                        alert("❌ Problem submission failed.");
-                    }
-                })
-                .catch(err => {
-                    console.error("🚨 Problem submission error:", err);
-                    alert("Error submitting problem.");
-                });
         });
     </script>
 
