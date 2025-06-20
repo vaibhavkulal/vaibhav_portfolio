@@ -411,7 +411,7 @@ a:hover {
     top: 0;
     width: 300px;
     height: 300px;
-    background-image: url(/assets/images/portrait.png);
+    background-image: url('/assets/images/portrait.png');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
