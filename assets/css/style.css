@@ -414,7 +414,8 @@ a:hover {
     background-size: contain;
     background-position: bottom;
     background-repeat: no-repeat;
-    background-image: url(assets/images/portrait.webp);
+background-image: url('assets/images/portrait.webp');
+
 }
 
 
@@ -448,7 +449,7 @@ a:hover {
             background-size: cover;
         background-position: center;
         background-repeat: no-repeat;
-        background-image: url(assets/images/portrait.webp);
+background-image: url('assets/images/portrait.webp');
         border-radius: 50%;
         overflow: hidden;
         /* Ensures contents stay inside the circle */
