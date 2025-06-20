@@ -1,16 +1,15 @@
 /*--------------------------------------------------------------
 # Global Settings
 --------------------------------------------------------------*/
-
 @font-face {
-    font-family: 'Agustina';
-    src: url('assets/fonts/Agustina.woff') format('woff');
+  font-family: 'Agustina';
+  src: url('assets/fonts/Agustina.woff') format('woff');
 }
 
-@font-face {
-    font-family: 'Dancing Script';
-    src: url('assets/fonts/DancingScript-Medium.ttf') format('truetype');
+body {
+  font-family: 'Agustina', sans-serif;
 }
+
 
 
 
