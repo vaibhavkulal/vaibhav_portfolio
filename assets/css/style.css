@@ -411,8 +411,7 @@ a:hover {
     top: 0;
     width: 300px;
     height: 300px;
-
-    background-image: url(/assets/images/portrait.webp);
+        background-image: url(/assets/images/portrait.webp);
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -446,8 +445,7 @@ a:hover {
         width: 300px;
         /* Or any fixed value */
         height: 300px;
-        /* Must be equal to width */
-        background-image: url(/assets/images/portrait.png);
+        /* Must be equal to width */        background-image: url(/assets/images/portrait.webp);
         background-size: cover;
         background-position: center;
         background-repeat: no-repeat;
