@@ -131,87 +131,92 @@
         </nav>
     </header>
 
-    <!-- Hero -->
-    <section id="hero">
-        <div class="container">
-            <div class="row about-content">
-                <div class="col-lg-5 order-lg-2">
-               <div class="hero-portrait" style="
-    position: relative;
-    overflow: hidden;
-    width: 170px;
-    height: 170px;
-    margin: 0 auto;
-    border: solid 3px transparent;
-    border-radius: 50%;
-    background: radial-gradient(circle at top left, var(--primary-color), var(--secondary-color));
-    background-origin: border-box;
-    background-clip: content-box, border-box;
-">
-    <img src="assets/images/portrait.webp" alt="Vaibhav Portrait" style="
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        border-radius: 50%;
-        display: block;
-    ">
-</div>
-
-
+   <!-- Hero -->
+<section id="hero">
+    <div class="container">
+        <div class="row about-content align-items-center">
+            <!-- Profile Image -->
+            <div class="col-lg-5 order-lg-2 text-center mb-4 mb-lg-0">
+                <div class="hero-portrait" style="
+                    position: relative;
+                    overflow: hidden;
+                    width: 170px;
+                    height: 170px;
+                    margin: 0 auto;
+                    border: solid 3px transparent;
+                    border-radius: 50%;
+                    background: radial-gradient(circle at top left, var(--primary-color), var(--secondary-color));
+                    background-origin: border-box;
+                    background-clip: content-box, border-box;
+                ">
+                    <img src="assets/images/portrait.webp" alt="Vaibhav Portrait" style="
+                        width: 100%;
+                        height: 100%;
+                        object-fit: cover;
+                        border-radius: 50%;
+                        display: block;
+                    ">
                 </div>
-                <div class="col-lg-7 order-lg-1 hero-content">
-                    <!-- Greeting -->
-                    <span class="h3" data-aos="fade-up" data-aos-delay="0" id="greetingText"></span>
+            </div>
 
-                    <!-- Name -->
-                    <h1 class="name" data-aos="fade-up" data-aos-delay="200">
-                        <span id="nameText"></span>
-                    </h1>
-                    <button type="button" class="btn btn-sm mt-3 mb-3 btn-showcase" data-aos="fade-up"
-                        data-aos-delay="400"><i class="bi bi-stars"></i> Full Stack Developer</button>
+            <!-- Hero Text Content -->
+            <div class="col-lg-7 order-lg-1 hero-content">
+                <!-- Greeting -->
+                <span class="h3" data-aos="fade-up" data-aos-delay="0" id="greetingText"></span>
 
-                    <p class="tagline mb-3" data-aos="fade-up" data-aos-delay="600">
-                        Started <span class="underline">curiously</span> by exploring both frontend and backend
-                        development. Now, building complete, scalable web applications with clean design and solid
-                        architecture. But this time <span class="underline">with confidence</span>.
-                    </p>
+                <!-- Name -->
+                <h1 class="name" data-aos="fade-up" data-aos-delay="200">
+                    <span id="nameText"></span>
+                </h1>
 
-                    <div class="social-icons pb-2 pt-2 mb-2">
-                        <a href="https://github.com/yourusername" target="_blank" class="github" data-aos="fade-up"
-                            data-aos-delay="620">
-                            <i class="bi bi-github"></i>
-                        </a>
-                        <a href="https://www.instagram.com/yourusername" target="_blank" class="instagram"
-                            data-aos="fade-up" data-aos-delay="640">
-                            <i class="bi bi-instagram"></i>
-                        </a>
-                        <a href="https://www.linkedin.com/in/yourusername" target="_blank" class="linkedin"
-                            data-aos="fade-up" data-aos-delay="660">
-                            <i class="bi bi-linkedin"></i>
-                        </a>
-                        <a href="https://leetcode.com/yourusername" target="_blank" class="leetcode" data-aos="fade-up"
-                            data-aos-delay="720">
-                            <img src="assets/images/icons/leetcode.png" alt="LeetCode"
-                                style="width: 20px; height: 20px;">
-                        </a>
-                        <a href="https://www.hackerrank.com/yourusername" target="_blank" class="hackerrank"
-                            data-aos="fade-up" data-aos-delay="740">
-                            <img src="assets/images/icons/hacker.png" alt="HackerRank"
-                                style="width: 20px; height: 20px;">
-                        </a>
-                    </div>
+                <!-- Role Button -->
+                <button type="button" class="btn btn-sm mt-3 mb-3 btn-showcase" data-aos="fade-up" data-aos-delay="400">
+                    <i class="bi bi-stars"></i> Full Stack Developer
+                </button>
 
-                    <div class="d-flex call-to-action">
-                        <a href="#contact" data-aos="fade-up" data-aos-delay="700"><button type="button"
-                                class="btn me-4 primary-bg-btn"><i class="bi bi-envelope"></i> Contact Me</button></a>
-                        <a href="#projects" data-aos="fade-up" data-aos-delay="800"><button type="button"
-                                class="btn btn-light secondary-bg-btn">View Portfolio <i
-                                    class="bi bi-arrow-up-right-circle"></i></button></a>
-                    </div>
+                <!-- Tagline -->
+                <p class="tagline mb-3" data-aos="fade-up" data-aos-delay="600">
+                    Started <span class="underline">curiously</span> by exploring both frontend and backend
+                    development. Now, building complete, scalable web applications with clean design and solid
+                    architecture. But this time <span class="underline">with confidence</span>.
+                </p>
+
+                <!-- Social Icons -->
+                <div class="social-icons pb-2 pt-2 mb-2">
+                    <a href="https://github.com/yourusername" target="_blank" class="github" data-aos="fade-up" data-aos-delay="620">
+                        <i class="bi bi-github"></i>
+                    </a>
+                    <a href="https://www.instagram.com/yourusername" target="_blank" class="instagram" data-aos="fade-up" data-aos-delay="640">
+                        <i class="bi bi-instagram"></i>
+                    </a>
+                    <a href="https://www.linkedin.com/in/yourusername" target="_blank" class="linkedin" data-aos="fade-up" data-aos-delay="660">
+                        <i class="bi bi-linkedin"></i>
+                    </a>
+                    <a href="https://leetcode.com/yourusername" target="_blank" class="leetcode" data-aos="fade-up" data-aos-delay="720">
+                        <img src="assets/images/icons/leetcode.png" alt="LeetCode" style="width: 20px; height: 20px;">
+                    </a>
+                    <a href="https://www.hackerrank.com/yourusername" target="_blank" class="hackerrank" data-aos="fade-up" data-aos-delay="740">
+                        <img src="assets/images/icons/hacker.png" alt="HackerRank" style="width: 20px; height: 20px;">
+                    </a>
+                </div>
+
+                <!-- Call to Action -->
+                <div class="d-flex call-to-action">
+                    <a href="#contact" data-aos="fade-up" data-aos-delay="700">
+                        <button type="button" class="btn me-4 primary-bg-btn">
+                            <i class="bi bi-envelope"></i> Contact Me
+                        </button>
+                    </a>
+                    <a href="#projects" data-aos="fade-up" data-aos-delay="800">
+                        <button type="button" class="btn btn-light secondary-bg-btn">
+                            View Portfolio <i class="bi bi-arrow-up-right-circle"></i>
+                        </button>
+                    </a>
                 </div>
             </div>
         </div>
-    </section>
+    </div>
+</section>
 
     <!-- Things I Love -->
     <section id="things-i-love">
