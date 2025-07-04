@@ -349,42 +349,55 @@
 
   <!-- Countdown and Theme Toggle Script -->
   <script>
-    const countdown = () => {
-      const targetTime = new Date().getTime() + 10 * 24 * 60 * 60 * 1000;
-      const interval = setInterval(() => {
-        const now = new Date().getTime();
-        const distance = targetTime - now;
+  const countdown = () => {
+    // Check if target time already exists in localStorage
+    let targetTime = localStorage.getItem("targetTime");
 
-        if (distance < 0) {
-          clearInterval(interval);
-          document.querySelector(".countdown").innerHTML = "<h2>We're Live!</h2>";
-          return;
-        }
-
-        const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-        const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-        const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-        const seconds = Math.floor((distance % (1000 * 60)) / 1000);
-
-        document.getElementById("days").textContent = String(days).padStart(2, "0");
-        document.getElementById("hours").textContent = String(hours).padStart(2, "0");
-        document.getElementById("minutes").textContent = String(minutes).padStart(2, "0");
-        document.getElementById("seconds").textContent = String(seconds).padStart(2, "0");
-      }, 1000);
-    };
-
-    const toggle = document.getElementById("toggle-mode");
-    if (localStorage.getItem("mode") === "light") {
-      document.body.classList.add("light");
-      toggle.checked = true;
+    if (!targetTime) {
+      // Set target time to 10 days from now and save it
+      const now = new Date();
+      const tenDaysFromNow = new Date(now.getFullYear(), now.getMonth(), now.getDate() + 10);
+      targetTime = tenDaysFromNow.getTime();
+      localStorage.setItem("targetTime", targetTime);
+    } else {
+      targetTime = parseInt(targetTime);
     }
 
-    toggle.addEventListener("change", () => {
-      document.body.classList.toggle("light");
-      localStorage.setItem("mode", document.body.classList.contains("light") ? "light" : "dark");
-    });
+    const interval = setInterval(() => {
+      const now = new Date().getTime();
+      const distance = targetTime - now;
 
-    countdown();
-  </script>
+      if (distance <= 0) {
+        clearInterval(interval);
+        document.querySelector(".countdown").innerHTML = "<h2>We're Live!</h2>";
+        return;
+      }
+
+      const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+      const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+      document.getElementById("days").textContent = String(days).padStart(2, "0");
+      document.getElementById("hours").textContent = String(hours).padStart(2, "0");
+      document.getElementById("minutes").textContent = String(minutes).padStart(2, "0");
+      document.getElementById("seconds").textContent = String(seconds).padStart(2, "0");
+    }, 1000);
+  };
+
+  // Theme toggle setup
+  const toggle = document.getElementById("toggle-mode");
+  if (localStorage.getItem("mode") === "light") {
+    document.body.classList.add("light");
+    toggle.checked = true;
+  }
+
+  toggle.addEventListener("change", () => {
+    document.body.classList.toggle("light");
+    localStorage.setItem("mode", document.body.classList.contains("light") ? "light" : "dark");
+  });
+
+  countdown();
+</script>
 </body>
 </html>
