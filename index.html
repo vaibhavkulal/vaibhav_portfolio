@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Under Maintenance</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet" />
+
+  <!-- Font Awesome (only for WhatsApp) -->
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    integrity="sha512-iecdLmaskl3hZQ8xJbY7KOikO+Qj4+KxeyzBXL6nXeqN2XcGvvfTqHg4z2HgC8ajlN/ZvAVM7LzGkL+9gGLO0g=="
+    crossorigin="anonymous"
+    referrerpolicy="no-referrer"
+  />
+
+  <style>
+    
+    :root {
+      --bg-color: #111;
+      --text-color: #fff;
+      --accent: #ff5500;
+      --card-bg: #222;
+    }
+
+    body.light {
+      --bg-color: #f4f4f4;
+      --text-color: #111;
+      --card-bg: #fff;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Open Sans', sans-serif;
+    }
+
+    body {
+      background: var(--bg-color);
+      color: var(--text-color);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      text-align: center;
+      transition: 0.3s;
+    }
+
+    .container {
+      padding: 20px;
+    }
+
+    h1 {
+      font-size: 2.2em;
+      margin-bottom: 10px;
+    }
+
+    h2 {
+      color: var(--accent);
+      margin-bottom: 20px;
+      font-size: 1.8em;
+    }
+
+    p {
+      color: #aaa;
+      margin-bottom: 30px;
+    }
+
+    .countdown {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      margin-bottom: 30px;
+    }
+
+    .countdown div {
+      background: var(--card-bg);
+      padding: 15px 25px;
+      border-radius: 10px;
+      font-size: 1.5em;
+    }
+
+    .countdown span {
+      display: block;
+      font-size: 0.7em;
+      color: #aaa;
+      margin-top: 5px;
+    }
+
+    .download-btn {
+      background: var(--accent);
+      color: #fff;
+      padding: 12px 24px;
+      border: none;
+      border-radius: 25px;
+      font-size: 1em;
+      text-decoration: none;
+      transition: 0.3s;
+    }
+
+    .download-btn:hover {
+      background: #fff;
+      color: var(--accent);
+      border: 1px solid var(--accent);
+    }
+
+    .social-icons {
+      margin-top: 30px;
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+    }
+
+    .social-icons a svg {
+      width: 36px;
+      height: 36px;
+      transition: transform 0.3s ease;
+    }
+
+    .social-icons a:hover svg {
+      transform: scale(1.1);
+    }
+
+    .curved {
+      background: var(--card-bg);
+      height: 300px;
+      width: 100%;
+      position: absolute;
+      top: 0;
+      border-bottom-left-radius: 50% 20%;
+      border-bottom-right-radius: 50% 20%;
+      z-index: -1;
+    }
+
+    .whatsapp-icon {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background: #25D366;
+      color: white;
+      padding: 12px;
+      border-radius: 50%;
+      font-size: 24px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+      transition: 0.3s;
+    }
+
+    .whatsapp-icon:hover {
+      background: #128C7E;
+    }
+
+    .switch {
+  width: 60px;
+  height: 28px;
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  z-index: 1000;
+}
+
+.switch input {
+  opacity: 0;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  cursor: pointer;
+}
+
+.switch label {
+  display: block;
+  width: 100%;
+  height: 100%;
+  background: #444;
+  border-radius: 50px;
+  position: relative;
+  transition: background 0.3s;
+}
+
+.switch label i {
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  width: 24px;
+  height: 24px;
+  background: #fff;
+  border-radius: 50%;
+  transition: 0.3s;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+}
+
+.switch input:checked ~ label {
+  background: var(--accent);
+}
+
+.switch input:checked ~ label i {
+  left: 34px;
+}
+
+    @media (max-width: 768px) {
+  h1 {
+    font-size: 1.6em;
+  }
+
+  h2 {
+    font-size: 1.4em;
+  }
+
+  .countdown {
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+
+  .countdown div {
+    font-size: 1.2em;
+    padding: 10px 15px;
+  }
+
+  .download-btn {
+    font-size: 0.9em;
+    padding: 10px 20px;
+  }
+
+  .social-icons a svg {
+    width: 28px;
+    height: 28px;
+  }
+
+  .switch {
+    width: 60px;
+    height: 28px;
+    top: 10px;
+    right: 10px;
+  }
+
+  .switch label {
+    width: 100%;
+    height: 100%;
+  }
+
+  .switch label i {
+    width: 24px;
+    height: 24px;
+    top: 2px;
+    left: 2px;
+  }
+
+  .switch input:checked ~ label i {
+    left: 34px;
+  }
+
+
+  .whatsapp-icon {
+    font-size: 20px;
+    padding: 10px;
+  }
+
+  .curved {
+    height: 200px;
+    border-bottom-left-radius: 50% 15%;
+    border-bottom-right-radius: 50% 15%;
+  }
+
+  .container {
+    padding: 10px;
+  }
+
+  p {
+    font-size: 0.95em;
+    margin-bottom: 20px;
+  }
+}
+
+  </style>
+</head>
+
+<body>
+  <div class="curved"></div>
+
+  <!-- Toggle Switch -->
+  <div class="switch">
+    <input type="checkbox" id="toggle-mode" />
+    <label for="toggle-mode"><i></i></label>
+  </div>
+
+  <div class="container">
+    <h1>We are Under Maintenance</h1>
+ 
+    <p>We are currently performing scheduled maintenance. Thank you for your patience!</p>
+
+    <!-- Countdown -->
+    <div class="countdown">
+      <div><span id="days">00</span><span>days</span></div>
+      <div><span id="hours">00</span><span>hours</span></div>
+      <div><span id="minutes">00</span><span>minutes</span></div>
+      <div><span id="seconds">00</span><span>seconds</span></div>
+    </div>
+
+    <!-- Resume Button -->
+    <a href="https://drive.google.com/file/d/1P9aikDvFJDgXYhlpdaADjD4A-kOe2P-B/view?usp=sharing" class="download-btn" download>Download Resume</a>
+
+    <!-- Social SVG Icons -->
+    <div class="social-icons">
+      <!-- LinkedIn -->
+      <a href="www.linkedin.com/in/vaibhavprofile2001" target="_blank" aria-label="LinkedIn">
+        <svg viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+          <title>LinkedIn</title>
+          <path fill="#0288D1" d="M42,37c0,2.762-2.238,5-5,5H11c-2.761,0-5-2.238-5-5V11c0-2.762,2.239-5,5-5h26c2.762,0,5,2.238,5,5V37z"/>
+          <path fill="#FFF" d="M12 19H17V36H12zM14.485 17h-.028C12.965 17 12 15.888 12 14.499 12 13.08 12.995 12 14.514 12c1.521 0 2.458 1.08 2.486 2.499C17 15.887 16.035 17 14.485 17zM36 36h-5v-9.099c0-2.198-1.225-3.698-3.192-3.698-1.501 0-2.313 1.012-2.707 1.99C24.957 25.543 25 26.511 25 27v9h-5V19h5v2.616C25.721 20.5 26.85 19 29.738 19c3.578 0 6.261 2.25 6.261 7.274L36 36z"/>
+        </svg>
+      </a>
+
+      <!-- Instagram -->
+<a href="https://www.instagram.com/silent_spectra/?next=%2F&hl=en" target="_blank" aria-label="Instagram">
+  <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 48 48">
+    <radialGradient id="instaGradient1" cx="19.38" cy="42.035" r="44.899" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#fd5"></stop>
+      <stop offset=".328" stop-color="#ff543f"></stop>
+      <stop offset=".348" stop-color="#fc5245"></stop>
+      <stop offset=".504" stop-color="#e64771"></stop>
+      <stop offset=".643" stop-color="#d53e91"></stop>
+      <stop offset=".761" stop-color="#cc39a4"></stop>
+      <stop offset=".841" stop-color="#c837ab"></stop>
+    </radialGradient>
+    <path fill="url(#instaGradient1)" d="M34.017,41.99l-20,0.019c-4.4,0.004-8.003-3.592-8.008-7.992l-0.019-20c-0.004-4.4,3.592-8.003,7.992-8.008l20-0.019c4.4-0.004,8.003,3.592,8.008,7.992l0.019,20C42.014,38.383,38.417,41.986,34.017,41.99z"/>
+    <radialGradient id="instaGradient2" cx="11.786" cy="5.54" r="29.813" gradientTransform="matrix(1 0 0 .6663 0 1.849)" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#4168c9"></stop>
+      <stop offset=".999" stop-color="#4168c9" stop-opacity="0"></stop>
+    </radialGradient>
+    <path fill="url(#instaGradient2)" d="M34.017,41.99l-20,0.019c-4.4,0.004-8.003-3.592-8.008-7.992l-0.019-20c-0.004-4.4,3.592-8.003,7.992-8.008l20-0.019c4.4-0.004,8.003,3.592,8.008,7.992l0.019,20C42.014,38.383,38.417,41.986,34.017,41.99z"/>
+    <path fill="#fff" d="M24,31c-3.859,0-7-3.14-7-7s3.141-7,7-7s7,3.14,7,7S27.859,31,24,31z M24,19c-2.757,0-5,2.243-5,5s2.243,5,5,5s5-2.243,5-5S26.757,19,24,19z"/>
+    <circle cx="31.5" cy="16.5" r="1.5" fill="#fff"/>
+    <path fill="#fff" d="M30,37H18c-3.859,0-7-3.14-7-7V18c0-3.86,3.141-7,7-7h12c3.859,0,7,3.14,7,7v12C37,33.86,33.859,37,30,37z M18,13c-2.757,0-5,2.243-5,5v12c0,2.757,2.243,5,5,5h12c2.757,0,5-2.243,5-5V18c0-2.757-2.243-5-5-5H18z"/>
+  </svg>
+</a>
+
+    </div>
+  </div>
+
+  <!-- WhatsApp Floating Button -->
+  <a class="whatsapp-icon" href="https://wa.me/+919611876604" target="_blank" aria-label="WhatsApp">
+    <i class="fab fa-whatsapp"></i>
+  </a>
+
+  <!-- Countdown and Theme Toggle Script -->
+  <script>
+    const countdown = () => {
+      const targetTime = new Date().getTime() + 10 * 24 * 60 * 60 * 1000;
+      const interval = setInterval(() => {
+        const now = new Date().getTime();
+        const distance = targetTime - now;
+
+        if (distance < 0) {
+          clearInterval(interval);
+          document.querySelector(".countdown").innerHTML = "<h2>We're Live!</h2>";
+          return;
+        }
+
+        const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+        const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+        const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+        document.getElementById("days").textContent = String(days).padStart(2, "0");
+        document.getElementById("hours").textContent = String(hours).padStart(2, "0");
+        document.getElementById("minutes").textContent = String(minutes).padStart(2, "0");
+        document.getElementById("seconds").textContent = String(seconds).padStart(2, "0");
+      }, 1000);
+    };
+
+    const toggle = document.getElementById("toggle-mode");
+    if (localStorage.getItem("mode") === "light") {
+      document.body.classList.add("light");
+      toggle.checked = true;
+    }
+
+    toggle.addEventListener("change", () => {
+      document.body.classList.toggle("light");
+      localStorage.setItem("mode", document.body.classList.contains("light") ? "light" : "dark");
+    });
+
+    countdown();
+  </script>
+</body>
+</html>
